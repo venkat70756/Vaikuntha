@@ -1,0 +1,34 @@
+<sly data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html" />
+
+<sly data-sly-call="${clientlib.css @ categories='vaikuntha.ollama'}" />
+<sly data-sly-call="${clientlib.js @ categories='granite.csrf'}" />
+
+
+<div class="voollama-chatbot" id="voollama-chatbot">
+
+    <div class="chat-window">
+        <div class="chat-header">
+            <h3>Ollama Assistant</h3>
+            <div class="chat-header-buttons">
+                <button class="minimize-btn" title="Minimize">&#x2013;</button>
+                <button class="close-btn" title="Close">&times;</button>
+            </div>
+        </div>
+
+        <div class="chat-body">
+            <div class="messages"></div>
+        </div>
+
+        <div class="chat-footer">
+            <input type="text" class="chat-input" placeholder="Ask me anything..." />
+            <button class="send-btn">Send</button>
+        </div>
+    </div>
+
+    <div class="chat-icon" id="voollama-chat-icon" title="Open Voollama Assistant">
+        VS
+    </div>
+</div>
+
+<sly data-sly-call="${clientlib.js @ categories='granite.utils'}" />
+<sly data-sly-call="${clientlib.js @ categories='vaikuntha.ollama'}" />

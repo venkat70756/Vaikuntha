@@ -1,0 +1,22 @@
+ <sly data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html"
+  data-sly-call="${clientlib.all @ categories='vaikunta book '}"/>
+
+
+<div class="book-component">
+    <h1 class="book-title">Hello!, This is our First Custom Component</h1>
+
+    <p class="book-author"><strong>Author:</strong> ${properties.authorName}</p>
+    <p class="book-name"><strong>Book Name:</strong> ${properties.bookName}</p>
+
+    <div class="book-image-wrapper">
+        <img src="${properties.bookImage}" alt="${properties.bookName}" />
+    </div>
+
+    <p class="book-date"><strong>Published Date:</strong> ${properties.publishedDate}</p>
+    <p class="book-address"><strong>Address:</strong> ${properties.bookAvialableAddress}</p>
+    <p class="book-price">
+        <strong>Price:</strong> ₹${properties.bookPrice}
+    </p>
+
+    <button class="book-buy-btn">Buy Now</button>
+</div>

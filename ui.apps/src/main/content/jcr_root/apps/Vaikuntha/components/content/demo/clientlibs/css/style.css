@@ -1,0 +1,54 @@
+.book-component {
+    max-width: 400px;
+    border: 1px solid #ddd;
+    padding: 16px;
+    border-radius: 8px;
+    background-color: #fff;
+    font-family: Arial, sans-serif;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+.book-title {
+    font-size: 20px;
+    margin-bottom: 12px;
+    color: #333;
+}
+
+.book-component p {
+    margin: 6px 0;
+    font-size: 14px;
+    color: #555;
+}
+
+.book-image-wrapper {
+    text-align: center;
+    margin: 12px 0;
+}
+
+.book-image-wrapper img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+}
+
+.book-price {
+    font-size: 16px;
+    color: #1a7f37;
+    font-weight: bold;
+}
+
+.book-buy-btn {
+    width: 100%;
+    margin-top: 12px;
+    padding: 10px;
+    background-color: #007acc;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.book-buy-btn:hover {
+    background-color: #005fa3;
+}

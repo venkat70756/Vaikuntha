@@ -1,0 +1,8 @@
+{
+  "getId" : 5,
+  "getBikeName" : "Yamaha Crux",
+  "getBikePrice" : "50k",
+  "getActiveOrNot" : true,
+  "getChaisNumber" : "ajfikjsmhngjhakhfsdx",
+  "getSpecifications": ["oldbike", "good condition"]
+}

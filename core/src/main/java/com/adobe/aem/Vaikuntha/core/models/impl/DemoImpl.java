@@ -1,9 +1,12 @@
 package com.adobe.aem.Vaikuntha.core.models.impl;
 
 import com.adobe.aem.Vaikuntha.core.models.Demo;
+import com.adobe.aem.Vaikuntha.core.services.DemoService;
+import com.adobe.aem.Vaikuntha.core.services.HeroService;
 import org.apache.sling.api.resource.Resource;
 import org.apache.sling.models.annotations.DefaultInjectionStrategy;
 import org.apache.sling.models.annotations.Model;
+import org.apache.sling.models.annotations.injectorspecific.OSGiService;
 import org.apache.sling.models.annotations.injectorspecific.ValueMapValue;
 
 
@@ -13,6 +16,10 @@ import org.apache.sling.models.annotations.injectorspecific.ValueMapValue;
         defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL
 )
 public class DemoImpl implements Demo {
+
+
+    @OSGiService
+    DemoService demoService;
 
 
     @ValueMapValue
@@ -32,6 +39,10 @@ public class DemoImpl implements Demo {
 
     @ValueMapValue
     private int bookPrice;
+
+    @OSGiService
+    HeroService heroService;
+
 
 
     @Override
@@ -66,6 +77,6 @@ public class DemoImpl implements Demo {
 
     @Override
     public String getExtraName(){
-        return "AEM";
+        return demoService.getMessage();
     }
 }

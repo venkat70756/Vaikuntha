@@ -1,0 +1,7 @@
+{
+  "getName": "Snehal",
+  "getAge" : 22,
+  "getRegular" : true,
+  "getSubjects": ["Java", "AEM"],
+  "getCountries": "russia"
+}

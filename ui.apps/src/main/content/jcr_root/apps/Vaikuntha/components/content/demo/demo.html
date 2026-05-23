@@ -1,6 +1,7 @@
  <sly data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html"
-  data-sly-call="${clientlib.all @ categories='vaikunta book '}"/>
+  data-sly-call="${clientlib.css @ categories='vaikunta book '}"/>
 
+  <!-- 
 <sly data-sly-use.model="com.adobe.aem.Vaikuntha.core.models.Demo">
 <div class="book-component">
     <h1 class="book-title">Hello!, This is our First Custom Component</h1>
@@ -23,3 +24,15 @@
 
 ${model.extraName}
 </sly>
+
+
+ -->
+
+
+ <div class="product-container">
+    <h2 class="title">Product List</h2>
+    <div id="product-grid" class="product-grid"></div>
+</div>
+
+ <sly data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html"
+  data-sly-call="${clientlib.js @ categories='vaikunta book '}"/>

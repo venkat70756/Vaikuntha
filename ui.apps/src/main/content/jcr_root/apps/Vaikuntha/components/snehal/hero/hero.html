@@ -1,0 +1,84 @@
+<sly data-sly-use.s="/libs/granite/sightly/templates/clientlib.html"
+   data-sly-call="${s.css @ categories='hero-clientlibs'}" />
+
+<sly data-sly-use.model="com.adobe.aem.Vaikuntha.core.models.Hero">
+   <h1 class="aem-test">${model.heroHeading}</h1>
+
+
+   ${model.name}
+
+   ${model.age}
+   <h4>${model.category}</h4> <br>
+   <h4>My Name: ${model.myName}</h4>
+   <img src="https://placehold.co/150" alt="Profile Photo">
+   <h2 class="aem-test">About Me</h2>
+   <p style="color: red;">A simple profile page showcasing basic HTML structure.</p>
+   <h2>Skills</h2>
+   <h3>Technical Skills</h3>
+   <ul>
+      <li>HTML5</li>
+      <li>CSS Basics</li>
+   </ul>
+   <h3>Soft Skills</h3>
+   <ul>
+      <li>Communication</li>
+      <li>Teamwork</li>
+   </ul>
+   <h2>Contact</h2>
+   <a href="#">LinkedIn</a>
+
+   <h1>Repeat</h1>
+   <ul data-sly-repeat.listItem="${model.store}">
+      <li>
+         <a href="${'/content/' in listItem.storePath ? refUrl : listItem.storePath || '1234'}"><img
+               class="footer-store-images" src="${listItem.storeImg}" alt="${listItem.altText}"></a>
+      </li>
+
+   </ul>
+
+
+   <h1>List</h1>
+   <ul data-sly-list.listItem="${model.store}">
+      <li>
+         <a href="${'/content/' in listItem.storePath ? refUrl : listItem.storePath || '1234'}"><img
+               class="footer-store-images" src="${listItem.storeImg}" alt="${listItem.altText}"></a>
+      </li>
+
+   </ul>
+
+   <h1>Include</h1>
+
+   <sly data-sly-include="secondHero.html" />
+
+</sly>
+
+<sly data-sly-use.s="/libs/granite/sightly/templates/clientlib.html"
+   data-sly-call="${s.js @ categories='hero-clientlibs'}" />
+
+
+
+
+   <h1>Attributes</h1>
+
+   <p class=""> Normal HTML Atrribues</p>
+
+
+   <p data-sly-attribute.class="Sightly"> Sighlty Attribue tag </p>
+
+
+   ===================================================================
+
+<div data-sly-test="${properties.heroHeading || properties.category}">
+
+<h5><b>Hero Component Heading is:</b>${properties.heroHeading}</h5>
+
+<h6 >the categorey of event is: ${properties.category}</h6>
+
+</div>   
+
+
+
+<p>Page Properties: ${pageProperties.jcr:title}</p>
+
+
+<h1>hello</h1>

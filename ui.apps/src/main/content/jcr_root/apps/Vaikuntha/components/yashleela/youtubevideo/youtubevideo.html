@@ -1,0 +1,31 @@
+<sly data-sly-use.venkat="/libs/granite/sightly/templates/clientlib.html"
+      data-sly-call="${venkat.css @ categories='youtube-video-clientlibs'}"/>
+
+<sly data-sly-use.yl="com.adobe.aem.Vaikuntha.core.models.YoutubeModel">
+
+    <h1 class="test h">Video Number: ${yl.videoNumber}</h1>
+
+
+
+    <iframe width="560" height="315"
+     src="${yl.videoId}"
+     title="YouTube video player" frameborder="0"
+     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+     referrerpolicy="strict-origin-when-cross-origin"
+     allowfullscreen></iframe>
+
+  
+      <p data-sly-test="${yl.videoDescription}"> Video Description: ${yl.videoDescription}</p>
+      
+
+</sly>
+
+<sly data-sly-use.venkat="/libs/granite/sightly/templates/clientlib.html"
+      data-sly-call="${venkat.js @ categories='youtube-video-clientlibs'}"/>
+
+
+two components
+
+core components
+
+custom component

@@ -20,7 +20,10 @@
                         fieldLabel="Is Regular?"
                         name="./isRegular"
                         required="{Boolean}true"
-                        text="Yes"
+                        checked="{Boolean}false"
+                        uncheckedValue="{Boolean}false"
+                        value="{Boolean}true"
+                        text="Is Regular?"
                      />
                      <countries 
                         jcr:primaryType="nt:unstructured" 
@@ -33,7 +36,52 @@
                                 <australia jcr:primaryType="nt:unstructured" text="Australia" value="australia"/>
                             </items>    
                         </countries>
- 
+                    <socialMedia
+                            jcr:primaryType="nt:unstructured"
+                            jcr:title="Social Media"
+                            sling:resourceType="granite/ui/components/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                            <tabs
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
+                                    composite="{Boolean}true"
+                                    fieldLabel="Social Media">
+                                <field
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/form/fieldset"
+                                        name="./socialMedia">
+                                    <items jcr:primaryType="nt:unstructured">
+                                        <column
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/foundation/container">
+                                            <items jcr:primaryType="nt:unstructured">
+                                                <socialMediaIcon
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/foundation/form/pathbrowser"
+                                                        fieldLabel="Social Media Icon"
+                                                        name="./socialMediaIcon"/>
+                                                <socialMediaAccount
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/foundation/form/pathbrowser"
+                                                        fieldLabel="Social Media Account"
+                                                        name="./socialMediaAccount"/>
+                                                <alttext
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                                        fieldLabel="Social Media icon alt Text"
+                                                        name="./altText"/>
+                                                <extraField
+                                                        jcr:primaryType="nt:unstructured"
+                                                        sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                                        fieldLabel="Extra Filed"
+                                                        name="./extraField"/>
+                                            </items>
+                                        </column>
+                                    </items>
+                                </field>
+                            </tabs>
+                        </items>
+                    </socialMedia>
                 </items>
             </column>
         </items>

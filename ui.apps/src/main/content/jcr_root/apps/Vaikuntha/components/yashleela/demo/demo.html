@@ -1,2 +1,22 @@
 
 <h1>Demo </h1>
+
+<sly data-sly-use.model="com.adobe.aem.Vaikuntha.core.models.DemoModel">
+
+    <h5> IS Regular Student: ${model.isRegular}</h5>
+
+    <h5>Country Name: ${model.country}</h5>
+
+    <ul data-sly-list.item="${model.socialMedia}">
+        <li>
+            ${item.extraField}
+            <a href="${item.socialMediaAccount}.html">
+                <img src="${item.socialMediaIcon}" alt="${item.altText}">
+            </a>
+        </li>
+    </ul>
+
+</sly>
+
+
+

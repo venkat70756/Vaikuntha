@@ -6,6 +6,7 @@ import org.osgi.service.component.annotations.*;
 import org.osgi.service.metatype.annotations.Designate;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import java.util.Arrays;
 
 @Component(service = BundlesTestService.class, immediate = true)
 @Designate(ocd = BundleTestConfiguration.class)
@@ -16,16 +17,35 @@ public class BundlesTestServiceImpl implements BundlesTestService {
     @Reference
     DemoService demoService;
 
+    private String studentName;
+
+    private int studentAge;
+
+    private boolean isRegular;
+
+    private String[] studentSubjects;
+
+    private String studentAdhar;
+
+    private String studentClass;
+
+
+    public BundlesTestServiceImpl() {}
+
     @Activate
-    public void activate(){
-        log.info("Another Service data: {}", demoService.getVenkat());
-        log.info("activate");
+    @Modified
+    public void activate(BundleTestConfiguration bundleTestConfiguration){
+        studentName = bundleTestConfiguration.getStudentName();
+        studentAge = bundleTestConfiguration.getStudentAge();
+        isRegular = bundleTestConfiguration.getRegularStudent();
+        studentSubjects = bundleTestConfiguration.getStudentSubjects();
+        studentAdhar = bundleTestConfiguration.getStudentAdharCardNumber();
+        studentClass = bundleTestConfiguration.getStudentClass();
+
+
+        log.info("Student Name: {} , Student Age: {},  Is regular: {}, Student Subjects: {}, Student Adhar: {}, Student Class: {}", studentName,  studentAge,  isRegular, Arrays.toString(studentSubjects), studentAdhar, studentClass);
     }
 
-    @Modified
-    public void modified(){
-        log.info("modified");
-    }
 
     @Deactivate
     public void deactivate(){
